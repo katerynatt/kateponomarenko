@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KATER'INA — Designer</title>
+  <meta name="description" content="Katerina Ponomarenko — designer portfolio. Based in Berlin, available worldwide.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light');
+    }
+  </script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <main class="page">
+
+    <header class="header">
+      <div class="header__left">
+        <div class="contacts">
+          <div class="contacts__labels">
+            <p>mail</p>
+            <p>phone</p>
+            <p>links</p>
+          </div>
+          <div class="contacts__values">
+            <p><a href="mailto:pnmrnkk7@gmail.com">pnmrnkk7@gmail.com</a></p>
+            <p><a href="tel:+4915117686693">+49 151 176 866 93</a></p>
+            <p class="contacts__links">
+              <a href="#" aria-label="X (Twitter)">X</a>
+              <a href="#" aria-label="LinkedIn">Li</a>
+              <a href="#" aria-label="Instagram">Ig</a>
+            </p>
+          </div>
+        </div>
+        <div class="tagline">
+          <p class="tagline__text">Designer</p>
+          <span class="tagline__slash">/</span>
+        </div>
+      </div>
+
+      <div class="header__right">
+        <div class="services">
+          <div class="services__col services__col--create">
+            <h2 class="services__heading">What I create</h2>
+            <p class="services__lead">Digital products that solve problems and help achieve goals</p>
+            <ul class="services__list services__list--muted">
+              <li>Websites</li>
+              <li>Mobile Apps</li>
+              <li>Animations</li>
+              <li>and more</li>
+            </ul>
+          </div>
+          <div class="services__col services__col--services">
+            <h2 class="services__heading">Services</h2>
+            <ul class="services__list">
+              <li>Product Design</li>
+              <li>Brand Design</li>
+            </ul>
+          </div>
+        </div>
+        <div class="header__side">
+          <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to light mode">
+            <span class="theme-toggle__knob"></span>
+          </button>
+          <img class="header__photo" src="assets/photo-thumb.png" alt="Portrait of Katerina">
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__left">
+        <div class="intent">
+          <p class="intent__title">I design with intention</p>
+          <div class="intent__body">
+            <p>every layout, every interaction, every visual choice has a reason behind it.</p>
+            <p>UX thinking first, aesthetics second.<br>
+            The result is a brand that doesn't just look good, but actually works: for your users, for your business, for the story you're trying to tell.</p>
+          </div>
+        </div>
+
+        <div class="title-block">
+          <img class="title-block__wordmark" src="assets/katerina-title.png" alt="KATER'INA">
+          <div class="title-block__caption">
+            <p class="title-block__name">ponomarenko</p>
+            <div class="title-block__meta">
+              <p>based in berlin</p>
+              <p>Available Worldwide</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="available">
+          <img class="available__arrow" src="assets/arrow.svg" alt="" aria-hidden="true">
+          <p>Available for new projects</p>
+        </div>
+        <div class="reel" role="img" aria-label="Showreel placeholder">
+          <span class="reel__label">Showreel — coming soon</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.theme-toggle');
+    const root = document.documentElement;
+
+    const sync = () => {
+      const light = root.classList.contains('light');
+      toggle.setAttribute('aria-checked', String(light));
+      toggle.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
+    };
+
+    toggle.addEventListener('click', () => {
+      root.classList.toggle('light');
+      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+      sync();
+    });
+
+    sync();
+  </script>
+</body>
+</html>
