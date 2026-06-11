@@ -358,16 +358,15 @@ img {
   aspect-ratio: 910 / 511;
   border-radius: calc(15 * var(--u));
   background: var(--surface);
-  border: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+  overflow: hidden;
+  transition: background-color 0.25s ease;
 }
 
-.reel__label {
-  color: var(--muted);
-  font-size: calc(16 * var(--u));
+.reel__video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ==========================================================================
@@ -616,9 +615,5 @@ img {
   .reel {
     aspect-ratio: 335 / 188;
     border-radius: 10px;
-  }
-
-  .reel__label {
-    font-size: 13px;
   }
 }
