@@ -37,6 +37,7 @@ html {
 }
 
 body {
+  position: relative;
   font-family: Arial, Helvetica, sans-serif;
   font-size: calc(18 * var(--u));
   line-height: normal;
@@ -66,9 +67,11 @@ img {
   display: block;
 }
 
-/* Grain overlay (Figma: Rectangle 6, mix-blend overlay, 20%) */
+/* Grain overlay (Figma: Rectangle 6, mix-blend overlay, 20%).
+   Absolutely positioned within body so it is clipped to the actual content
+   height and never bleeds into the overscroll area on touch devices. */
 .noise {
-  position: fixed;
+  position: absolute;
   inset: 0;
   background: url("../assets/noise.png") top left / 1024px 1024px repeat;
   mix-blend-mode: overlay;
